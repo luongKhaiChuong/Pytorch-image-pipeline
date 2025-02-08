@@ -7,7 +7,8 @@ This repository provides a standardized model training class for pretrained mode
 These the default parameters of the library:
 
 # Default parameters:
-Pipeliner(data_path=None, image_extensions=(".jpg", ".png", ".jpeg"), device = 'cpu', split_ratio=(0.8, 0.1, 0.1), 
+
+        Pipeliner(data_path=None, image_extensions=(".jpg", ".png", ".jpeg"), device = 'cpu', split_ratio=(0.8, 0.1, 0.1), 
 
                  resized=None, cropped=None, is_augmented=False, horizontal_flip=False, p_horizontal=0.5, 
                  
