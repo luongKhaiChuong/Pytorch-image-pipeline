@@ -8,12 +8,18 @@ These the default parameters of the library:
 
 # Default parameters:
 Pipeliner(data_path=None, image_extensions=(".jpg", ".png", ".jpeg"), device = 'cpu', split_ratio=(0.8, 0.1, 0.1), 
+
                  resized=None, cropped=None, is_augmented=False, horizontal_flip=False, p_horizontal=0.5, 
+                 
                  vertical_flip=False, p_vertical=0.5, jitter=False, jit_brightness=0.2, jit_contrast=0.2,
-                 jit_saturation=0.2, jit_hue=0.1, rotation=0, gaussian_blur=False, blur_kernel=(5, 5), normalize=True,
-                 nor_mean=[0.485, 0.456, 0.406], nor_std=[0.229, 0.224, 0.225], criterion="CrossEntropyLoss", batch_size=32, epochs=10,
-                 optimizer=lambda params: optim.Adam(params, lr=0.001), scheduler=None, model_name=None, model=None, weights=None, 
-                 random_state=42)
+                 
+                 jit_saturation=0.2, jit_hue=0.1, rotation=0, gaussian_blur=False, blur_kernel=(5, 5), 
+                 
+                 normalize=True, nor_mean=[0.485, 0.456, 0.406], nor_std=[0.229, 0.224, 0.225], 
+                 
+                 criterion="CrossEntropyLoss", batch_size=32, epochs=10, optimizer=lambda params: optim.Adam(params, lr=0.001), scheduler=None, 
+                 
+                 model_name=None, model=None, weights=None, random_state=42)
 # Parameter description:
 ## Data handling and preprocessing:
 data_path: A directory string of the dataset 
@@ -84,7 +90,7 @@ load_dataset(dog_barplot=32): A pipeline that automatically read your folders, e
   - Preprocess the data (including basic transformation like normalization and resize, and augmentations)
   - Visualize the images before and after the transformations. Note: Since it will print some of the image in ALL the categories, so it might overwhelmed you if the    amount of categories exceed 10, so maybe you might want to turn them off.
   - Split the dataset into train, test, val sets. Note: I used stratified split for the sake of uniform across the datasets, which takes a lot of computational     resource, so you may want to rewrite it.
-  - 
+
 build_model(): A function that automatically build the model based on the name of the model you provided, or use the model that you assigned. It also prints the architecture of the model.
 
 train(): A function for training the model and also have progress bar visualization using tqdm. It returns the model with the best validation loss.
